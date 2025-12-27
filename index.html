@@ -1,23 +1,23 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PENTALYON — eSports</title>
-  <meta name="description" content="Pentalyon eSports — roster, tornei, sponsor e community." />
+  <title>PENTALYON — Esports</title>
+  <meta name="description" content="Pentalyon Esports — roster, tournaments, sponsors, and community." />
 
-  <!-- Favicon (usa lo stesso logo) -->
+  <!-- Favicon (uses your logo) -->
   <link rel="icon" href="logo.png" />
 
   <style>
     :root{
       /* YOUR COLORS */
-      --bg:#020A06;     /* nero profondo */
-      --brand:#1A472A;  /* verde */
+      --bg:#020A06;     /* deep black */
+      --brand:#1A472A;  /* green */
       --ink:#eafff2;
       --muted:#b6e3c5;
 
-      /* accents (derivati dal verde) */
+      /* accents (derived from green) */
       --neon:#1A472A;
       --neon2:#2bd673;
       --hot:#7CFFB4;
@@ -262,12 +262,13 @@
       font-size:12px; color: rgba(182,227,197,.90);
       display:flex; gap:12px; flex-wrap:wrap;
       letter-spacing:.08em;
+      text-transform:uppercase;
     }
     .fine b{color: rgba(234,255,242,.92)}
     .statbar{
       margin-top:18px;
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr); /* 2 boxes now */
       gap:12px;
     }
     .stat{
@@ -360,7 +361,7 @@
       border:1px solid rgba(234,255,242,.12);
       box-shadow: 0 12px 28px rgba(26,71,42,.18);
     }
-    .nick{font-weight:950; letter-spacing:.06em}
+    .nick{font-weight:950; letter-spacing:.06em; text-transform:uppercase}
     .role{font-size:11px; color: rgba(182,227,197,.95); letter-spacing:.12em; text-transform:uppercase}
     .meta{margin-top:10px; display:flex; gap:10px; flex-wrap:wrap}
     .chip{
@@ -369,6 +370,7 @@
       border:1px solid rgba(234,255,242,.10);
       background: rgba(234,255,242,.04);
       color: rgba(234,255,242,.86);
+      text-transform:uppercase;
     }
     .aboutTeam{padding:18px}
     .aboutTeam .big{font-size:28px; font-weight:950; letter-spacing:-.03em; margin:2px 0 10px; text-transform:uppercase;}
@@ -401,7 +403,7 @@
       display:flex; gap:12px; justify-content:space-between; align-items:flex-start;
     }
     .item:first-child{border-top:0}
-    .item b{display:block; letter-spacing:.06em}
+    .item b{display:block; letter-spacing:.06em; text-transform:uppercase}
     .item small{display:block; color: rgba(182,227,197,.92); margin-top:6px; line-height:1.4}
     .sponsors{padding:18px}
     .sGrid{display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-top:12px;}
@@ -513,24 +515,24 @@
     <div class="container inner">
       <div class="brandBox" aria-label="Pentalyon">
         <div class="brandMark" aria-hidden="true">
-          <img src="logo.png" alt="Logo Pentalyon">
+          <img src="logo.png" alt="Pentalyon logo">
         </div>
         <div class="brandText">
           <b>PENTALYON</b>
-          <span>eSports</span>
+          <span>Esports</span>
         </div>
       </div>
 
-      <nav class="links" aria-label="Navigazione">
-        <a href="#about">Chi siamo</a>
+      <nav class="links" aria-label="Navigation">
+        <a href="#about">About</a>
         <a href="#roster">Roster</a>
-        <a href="#tournaments">Tornei</a>
-        <a href="#sponsors">Sponsor</a>
-        <a href="#join">Unisciti</a>
-        <button class="btn primary" id="watchBtn">Guarda Live</button>
+        <a href="#tournaments">Tournaments</a>
+        <a href="#sponsors">Sponsors</a>
+        <a href="#join">Join</a>
+        <button class="btn primary" id="watchBtn">Watch Live</button>
       </nav>
 
-      <button class="btn hamb" id="menuBtn" aria-label="Apri menu">☰ Menu</button>
+      <button class="btn hamb" id="menuBtn" aria-label="Open menu">☰ Menu</button>
     </div>
   </header>
 
@@ -543,7 +545,7 @@
             <div class="heroTop">
               <div class="heroCrest">
                 <div class="crest" aria-hidden="true">
-                  <img src="logo.png" alt="Logo Pentalyon">
+                  <img src="logo.png" alt="Pentalyon logo">
                 </div>
                 <div class="kicker">
                   <span class="pill">🦁 Pentalyon Pride</span>
@@ -553,37 +555,34 @@
               </div>
             </div>
 
-            <h1 class="glitch" data-text="DOMINA L’ARENA">DOMINA L’ARENA</h1>
+            <h1 class="glitch" data-text="DOMINATE THE ARENA">DOMINATE THE ARENA</h1>
 
             <p class="lead">
-              Pentalyon nasce per vincere: disciplina, fame e community.
-              Tornei, roster, contenuti e vibe “dark green” senza compromessi.
+              Pentalyon was built to win: discipline, hunger, and community.
+              Tournaments, roster, content — dark green vibes, no compromises.
             </p>
 
             <div class="ctaRow">
-              <button class="btn primary" id="joinBtn">Entra nel Team</button>
+              <button class="btn primary" id="joinBtn">Join the Team</button>
               <button class="btn" id="kitBtn">Media Kit</button>
-              <button class="btn" id="scrollBtn">Esplora ↓</button>
+              <button class="btn" id="scrollBtn">Explore ↓</button>
             </div>
 
-            <div class="statbar" aria-label="Statistiche">
+            <!-- STATS: wins + trophies only (both 0) -->
+            <div class="statbar" aria-label="Stats">
               <div class="stat">
                 <div class="n" id="statWins">0</div>
-                <div class="l">Vittorie</div>
+                <div class="l">Wins</div>
               </div>
               <div class="stat">
                 <div class="n" id="statCup">0</div>
-                <div class="l">Coppe</div>
-              </div>
-              <div class="stat">
-                <div class="n" id="statFans">0</div>
-                <div class="l">Fan</div>
+                <div class="l">Trophies</div>
               </div>
             </div>
 
             <div class="fine">
               <span><b>HQ:</b> IT / EU</span>
-              <span><b>Focus:</b> Inserisci giochi</span>
+              <span><b>Focus:</b> Add your games</span>
             </div>
           </div>
         </div>
@@ -591,37 +590,37 @@
         <aside class="card reveal">
           <div class="heroSide">
             <div class="tile">
-              <h3>Prossimi eventi</h3>
+              <h3>Upcoming events</h3>
 
               <div class="event">
                 <div>
                   <b>Pentalyon Cup — Qualifiers</b>
-                  <small>Stasera • BO3 • Match featured</small>
+                  <small>Tonight • BO3 • Featured match</small>
                 </div>
-                <span class="tag open">Iscrizioni</span>
+                <span class="tag open">Sign-ups</span>
               </div>
 
               <div class="event">
                 <div>
                   <b>Scrim Night</b>
-                  <small>Ogni mercoledì • 21:00 CET • Open lobby</small>
+                  <small>Every Wednesday • 21:00 CET • Open lobby</small>
                 </div>
                 <span class="tag live">Live</span>
               </div>
 
               <div class="event">
                 <div>
-                  <b>Finale Regionale</b>
-                  <small>Domenica • LAN • best of the best</small>
+                  <b>Regional Final</b>
+                  <small>Sunday • LAN • Best of the best</small>
                 </div>
                 <span class="tag win">Finals</span>
               </div>
             </div>
 
             <div class="tile">
-              <h3>Modalità “Hype”</h3>
+              <h3>“Hype” mode</h3>
               <small style="color:rgba(182,227,197,.92); line-height:1.6">
-                Attiva/disattiva effetti extra (particelle + glow).
+                Enable/disable extra effects (particles + glow).
               </small>
               <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap">
                 <button class="btn" id="fxToggle">Toggle FX</button>
@@ -635,10 +634,10 @@
     <section id="about" class="section container">
       <div class="sectionHead reveal">
         <div>
-          <h2>Chi siamo</h2>
+          <h2>About</h2>
           <p>
-            Pentalyon è un progetto eSports: competitività, contenuti, community.
-            Qui metti mission, storia e obiettivi (ti preparo anche una versione “ultra pro” se vuoi).
+            Pentalyon is an esports project built around competition, content, and community.
+            Drop your mission, story, and goals here (and we can make it ultra-pro).
           </p>
         </div>
       </div>
@@ -647,19 +646,19 @@
         <div class="card feature reveal">
           <div class="icon" aria-hidden="true">🎯</div>
           <h3>Performance</h3>
-          <p>Allenamento, review e strategia. Ogni match ha un piano.</p>
+          <p>Training, reviews, and strategy. Every match has a plan.</p>
         </div>
 
         <div class="card feature reveal">
           <div class="icon" aria-hidden="true">🧠</div>
-          <h3>Mentalità</h3>
-          <p>Calma e comunicazione: si vince insieme, sempre.</p>
+          <h3>Mental</h3>
+          <p>Composure and comms: you win together, always.</p>
         </div>
 
         <div class="card feature reveal">
           <div class="icon" aria-hidden="true">🛡️</div>
           <h3>Community</h3>
-          <p>Eventi e server attivo: la pride non si spegne mai.</p>
+          <p>Events and an active server: the pride never sleeps.</p>
         </div>
       </div>
     </section>
@@ -668,15 +667,15 @@
       <div class="sectionHead reveal">
         <div>
           <h2>Roster</h2>
-          <p>Metti qui i nick veri + ruoli. Se mi dai i nomi, te lo compilo io in 10 secondi.</p>
+          <p>Add your real player names + roles. If you send them, I’ll plug everything in cleanly.</p>
         </div>
-        <button class="btn" id="tryoutBtn">Tryout</button>
+        <button class="btn" id="tryoutBtn">Tryouts</button>
       </div>
 
       <div class="roster">
         <div class="card players reveal">
           <h3 style="margin:0; letter-spacing:.14em; text-transform:uppercase; font-size:12px; color:rgba(234,255,242,.88)">
-            Line-up principale
+            Main lineup
           </h3>
 
           <div class="playerGrid" role="list">
@@ -689,7 +688,7 @@
                     <div class="role">IGL</div>
                   </div>
                 </div>
-                <span class="tag open">S-Tier</span>
+                <span class="tag open">S-tier</span>
               </div>
               <div class="meta">
                 <span class="chip">Clutch</span>
@@ -755,12 +754,12 @@
             <span class="pill">⚙️ Analytics</span>
             <span class="pill">🦁 Pentalyon Power</span>
           </div>
-          <div class="big">POWER INDEX</div>
+          <div class="big">Power Index</div>
           <p style="margin:0; color:rgba(182,227,197,.92); line-height:1.6">
-            Indicatori demo (collegabili a statistiche reali quando vuoi).
+            Demo indicators (can be connected to real stats later).
           </p>
 
-          <div class="meter" aria-label="Statistiche team">
+          <div class="meter" aria-label="Team stats">
             <div>
               <div class="labelRow"><span>Aim</span><span id="vAim">0%</span></div>
               <div class="bar"><i data-val="92"></i></div>
@@ -790,35 +789,35 @@
     <section id="tournaments" class="section container">
       <div class="sectionHead reveal">
         <div>
-          <h2>Tornei & risultati</h2>
-          <p>Qui puoi mettere eventi reali con link a bracket e VOD.</p>
+          <h2>Tournaments & results</h2>
+          <p>Add real events here with bracket links and VODs.</p>
         </div>
       </div>
 
       <div class="split">
         <div class="card list reveal">
           <h3 style="margin:0; letter-spacing:.14em; text-transform:uppercase; font-size:12px; color:rgba(234,255,242,.88)">
-            Ultimi match
+            Latest matches
           </h3>
 
           <div class="item">
             <div>
               <b>Pentalyon vs Eclipse — 2:0</b>
-              <small>Map: 13-7 • 13-10</small>
+              <small>Maps: 13-7 • 13-10</small>
             </div>
             <span class="tag win">W</span>
           </div>
           <div class="item">
             <div>
               <b>Pentalyon vs Helix — 1:2</b>
-              <small>Overtime clutch — highlight sul canale</small>
+              <small>Overtime clutch — highlight on the channel</small>
             </div>
             <span class="tag live">L</span>
           </div>
           <div class="item">
             <div>
               <b>Pentalyon vs Aurora — 2:1</b>
-              <small>Reverse sweep — mentalità di ferro</small>
+              <small>Reverse sweep — steel mentality</small>
             </div>
             <span class="tag win">W</span>
           </div>
@@ -832,12 +831,12 @@
         <div id="sponsors" class="card sponsors reveal">
           <div class="sectionHead" style="margin:0 0 10px">
             <div>
-              <h2 style="font-size:18px; margin:0">Sponsor</h2>
-              <p style="font-size:13px; margin-top:6px">Sostituisci questi nomi con brand reali.</p>
+              <h2 style="font-size:18px; margin:0">Sponsors</h2>
+              <p style="font-size:13px; margin-top:6px">Replace these placeholders with real brands.</p>
             </div>
           </div>
 
-          <div class="sGrid" aria-label="Sponsor grid">
+          <div class="sGrid" aria-label="Sponsors grid">
             <div class="s">Pentalyon Gear</div>
             <div class="s">GreenPulse</div>
             <div class="s">LionFuel</div>
@@ -847,7 +846,7 @@
           </div>
 
           <div class="ctaRow" style="margin-top:14px">
-            <button class="btn primary" id="sponsorBtn">Diventa Sponsor</button>
+            <button class="btn primary" id="sponsorBtn">Become a Sponsor</button>
             <button class="btn" id="pressBtn">Press</button>
           </div>
         </div>
@@ -857,14 +856,14 @@
     <section id="join" class="section container">
       <div class="card cta reveal">
         <div>
-          <h3>Unisciti alla pride</h3>
+          <h3>Join the pride</h3>
           <p style="margin:8px 0 0; color:rgba(182,227,197,.92); line-height:1.6">
-            Newsletter “drop” con eventi, tryout e merch. (Demo: collega un servizio reale quando vuoi.)
+            Drop newsletter with events, tryouts, and merch. (Demo — connect a real service anytime.)
           </p>
         </div>
         <form class="form" id="nlForm">
-          <input id="email" type="email" placeholder="La tua email" required />
-          <button class="btn primary" type="submit">Iscriviti</button>
+          <input id="email" type="email" placeholder="Your email" required />
+          <button class="btn primary" type="submit">Subscribe</button>
         </form>
       </div>
     </section>
@@ -873,7 +872,7 @@
       <div class="container foot">
         <div>© <span id="year"></span> PENTALYON • PRIDE NEVER SLEEPS</div>
         <div class="social">
-          <a href="#" id="tw">X/Twitter</a>
+          <a href="#" id="tw">X / Twitter</a>
           <a href="#" id="yt">YouTube</a>
           <a href="#" id="tt">TikTok</a>
         </div>
@@ -900,32 +899,33 @@
     $("#joinBtn").addEventListener("click", () => $("#join").scrollIntoView({behavior:"smooth"}));
     $("#tryoutBtn").addEventListener("click", () => $("#join").scrollIntoView({behavior:"smooth"}));
 
-    $("#watchBtn").addEventListener("click", () => toast("🔴 Live: collega qui Twitch/YouTube quando vuoi."));
-    $("#kitBtn").addEventListener("click", () => toast("📦 Media Kit: aggiungi un PDF o una pagina dedicata."));
-    $("#discordBtn").addEventListener("click", () => toast("💬 Discord: inserisci il tuo link d’invito."));
-    $("#shopBtn").addEventListener("click", () => toast("🛍️ Merch: collega uno shop/link."));
-    $("#highBtn").addEventListener("click", () => toast("🎬 Highlights: metti qui i tuoi video migliori."));
-    $("#bracketBtn").addEventListener("click", () => toast("🧩 Bracket: link a Challonge/Toornament."));
-    $("#sponsorBtn").addEventListener("click", () => toast("🤝 Sponsor: aggiungi un form o una mail dedicata."));
-    $("#pressBtn").addEventListener("click", () => toast("📰 Press: crea una pagina con logo pack e contatti."));
+    $("#watchBtn").addEventListener("click", () => toast("🔴 Live: add your Twitch/YouTube link anytime."));
+    $("#kitBtn").addEventListener("click", () => toast("📦 Media Kit: add a PDF or a dedicated page."));
+    $("#discordBtn").addEventListener("click", () => toast("💬 Discord: paste your invite link here."));
+    $("#shopBtn").addEventListener("click", () => toast("🛍️ Merch: connect a shop or a link."));
+    $("#highBtn").addEventListener("click", () => toast("🎬 Highlights: link your best videos."));
+    $("#bracketBtn").addEventListener("click", () => toast("🧩 Bracket: link Challonge/Toornament."));
+    $("#sponsorBtn").addEventListener("click", () => toast("🤝 Sponsors: add a form or a dedicated email."));
+    $("#pressBtn").addEventListener("click", () => toast("📰 Press: create a page with logo pack + contacts."));
 
-    $("#tw").addEventListener("click", (e)=>{e.preventDefault(); toast("Aggiungi il link al tuo profilo X/Twitter.");});
-    $("#yt").addEventListener("click", (e)=>{e.preventDefault(); toast("Aggiungi il link al tuo canale YouTube.");});
-    $("#tt").addEventListener("click", (e)=>{e.preventDefault(); toast("Aggiungi il link al tuo TikTok.");});
+    $("#tw").addEventListener("click", (e)=>{e.preventDefault(); toast("Add your X/Twitter profile link.");});
+    $("#yt").addEventListener("click", (e)=>{e.preventDefault(); toast("Add your YouTube channel link.");});
+    $("#tt").addEventListener("click", (e)=>{e.preventDefault(); toast("Add your TikTok link.");});
 
     $("#nlForm").addEventListener("submit", (e) => {
       e.preventDefault();
       const v = $("#email").value.trim();
-      toast(v ? "✅ Iscritto! (demo) — collega Mailchimp quando vuoi." : "Inserisci un’email valida.");
+      toast(v ? "✅ Subscribed! (demo) — connect Mailchimp anytime." : "Please enter a valid email.");
       $("#email").value = "";
     });
 
-    function animateCounter(el, target, duration=1100){
+    function animateCounter(el, target, duration=900){
+      if(!el) return;
       const t0 = performance.now();
       function tick(now){
         const p = Math.min(1, (now - t0) / duration);
         const val = Math.round(target * (1 - Math.pow(1-p, 3)));
-        el.textContent = val.toLocaleString("it-IT");
+        el.textContent = val.toLocaleString("en-US");
         if(p < 1) requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
@@ -956,12 +956,12 @@
     }, {threshold: 0.18});
     $$(".reveal").forEach(el=> io.observe(el));
 
+    // Hero stats (wins + trophies only) -> both 0
     const heroObs = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
-          animateCounter($("#statWins"), 284);
-          animateCounter($("#statCup"), 19);
-          animateCounter($("#statFans"), 48200);
+          animateCounter($("#statWins"), 0);
+          animateCounter($("#statCup"), 0);
           heroObs.disconnect();
         }
       });
@@ -978,7 +978,7 @@
     });
 
     $("#menuBtn").addEventListener("click", ()=>{
-      toast("📌 Menu mobile: scorri — se vuoi ti metto un drawer vero.");
+      toast("📌 Mobile menu: scroll — or I can add a real slide drawer menu.");
       $("#about").scrollIntoView({behavior:"smooth"});
     });
 
@@ -996,3 +996,4 @@
   </script>
 </body>
 </html>
+
